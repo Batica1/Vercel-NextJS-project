@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Navigation */
+
+/* Smooth mobile menu transition */
+/* Smooth transition for mobile menu */
+.mobile-menu {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Prevent clicks when closed */
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
